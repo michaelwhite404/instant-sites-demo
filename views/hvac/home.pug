@@ -1,0 +1,167 @@
+extends base
+
+block content
+  .hero-header
+    .main-container
+      .hero-container.w-container
+        h1
+          | Need an 
+          span.steel-blue-span HVAC
+          |  Technician?
+        h3
+          span(data-inject="businessName") #{data.businessName}
+          |  can help!
+        a.blue-to-clear-button.w-button(href=`/hvac/${data.customId}/${data.slug}/contact`) Contact Us
+  .section
+    .main-container
+      .w-container
+        .div-block
+          .div-block-2
+            .div-block-3
+              .html-embed.w-embed
+                svg#1587985969.svg.u_1587985969(xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 100 100" data-icon-name="li_gear" data-hover-effect="zoomout")
+                  g#1086766710
+                    path#1663045822(d="M84.3,56.6V43.4H78c-0.7-3-1.9-5.8-3.5-8.4l4.5-4.5l-9.4-9.4l-4.5,4.5c-2.6-1.6-5.5-2.8-8.4-3.5v-6.3H43.4V22\
+                    c-3,0.7-5.8,1.9-8.4,3.5l-4.5-4.5l-9.4,9.4l4.5,4.5c-1.6,2.6-2.8,5.5-3.5,8.4h-6.3v13.3H22c0.7,3,1.9,5.8,3.5,8.4l-4.5,4.5l9.4,9.4\
+                    l4.5-4.5c2.6,1.6,5.5,2.8,8.4,3.5v6.3h13.3V78c3-0.7,5.8-1.9,8.4-3.5l4.5,4.5l9.4-9.4l-4.5-4.5c1.6-2.6,2.8-5.5,3.5-8.4H84.3z\
+                    M76,55.3c-0.7,3.3-2,6.5-3.9,9.3l-0.5,0.8l4.2,4.2l-6.2,6.3l-4.2-4.2l-0.8,0.5c-2.9,1.9-6,3.2-9.3,3.9l-0.9,0.2V82h-8.8v-5.9\
+                    L44.7,76c-3.3-0.7-6.5-2-9.3-3.9l-0.8-0.5l-4.2,4.2l-6.3-6.3l4.2-4.2l-0.5-0.8c-1.9-2.9-3.2-6-3.9-9.3l-0.2-0.9H18v-8.8h5.9\
+                    l0.2-0.9c0.7-3.3,2-6.5,3.9-9.3l0.5-0.8l-4.2-4.2l6.3-6.3l4.2,4.2l0.8-0.5c2.9-1.9,6-3.2,9.3-3.9l0.9-0.2V18h8.8v5.9l0.9,0.2\
+                    c3.3,0.7,6.5,2,9.3,3.9l0.8,0.5l4.2-4.2l6.3,6.3l-4.2,4.2l0.5,0.8c1.9,2.9,3.2,6,3.9,9.3l0.2,0.9H82v8.8h-5.9L76,55.3z")
+                    path#1484369834(d="M50,43.4c-3.7,0-6.6,3-6.6,6.6s3,6.6,6.6,6.6c3.7,0,6.6-3,6.6-6.6S53.7,43.4,50,43.4z M50,54.4c-2.4,0-4.4-2-4.4-4.4\
+                    s2-4.4,4.4-4.4c2.4,0,4.4,2,4.4,4.4S52.4,54.4,50,54.4z")
+            h4 Full Installation
+            .text-block
+              | Our technicians can work with a variety of business and home environments to install a brand-new HVAC system to keep your temperature regulated.
+          .div-block-2.middle
+            .div-block-3
+              .html-embed.w-embed
+                svg#1719056796.svg.u_1719056796(xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 100 100" data-hover-effect="zoomout" data-icon-name="li_tools")
+                  path(d="M84.9,63.5c-2.3-2.3-5.3-3.6-8.6-3.6c-2.9,0-5.6,1-7.7,2.9L55.8,50l21.3-21.3l0.8,0.8l7.8-7.8l-3.1-3.1l-7.8,7.8l0.8,0.8\
+                  L54.2,48.4L41.4,35.6c1.8-2.2,2.9-4.9,2.9-7.7c0-3.2-1.3-6.3-3.6-8.6c-3-3-7.5-4.2-11.7-3.1l-1.9,0.5l7.3,7.3l-6.3,6.3l-7.3-7.3\
+                  l-0.5,1.9c-1.1,4.2,0.1,8.7,3.1,11.7c2.3,2.3,5.3,3.6,8.6,3.6l0,0c2.9,0,5.6-1,7.7-2.9L52.6,50L38.3,64.3l-3.9-3.9L21.9,72.9\
+                  c-1.3,1.3-1.9,2.9-1.9,4.7c0,1.8,0.7,3.4,1.9,4.7c1.3,1.3,2.9,1.9,4.7,1.9c1.8,0,3.4-0.7,4.7-1.9l12.5-12.5l-3.9-3.9l14.3-14.3\
+                  L67,64.4c-1.8,2.2-2.9,4.9-2.9,7.7c0,3.2,1.3,6.3,3.6,8.6c2.3,2.3,5.3,3.5,8.5,3.5c1.1,0,2.1-0.1,3.2-0.4l1.9-0.5L74,76l6.2-6.3\
+                  l7.3,7.3l0.5-1.9C89.1,71,87.9,66.5,84.9,63.5z M32.1,37.8L32.1,37.8c-2.7,0-5.2-1-7-2.9c-2-2-3-4.7-2.9-7.6l6,6l9.4-9.4l-6-6\
+                  c2.8-0.2,5.6,0.9,7.5,2.9c1.9,1.9,2.9,4.4,2.9,7c0,2.7-1,5.2-2.9,7C37.2,36.8,34.7,37.8,32.1,37.8z M29.7,80.7\
+                  c-1.7,1.7-4.6,1.7-6.2,0c-0.8-0.8-1.3-1.9-1.3-3.1c0-1.2,0.5-2.3,1.3-3.1l10.9-10.9l6.3,6.3L29.7,80.7z M80.2,66.6L70.8,76l6,6\
+                  c-0.2,0-0.4,0-0.6,0c-2.6,0-5.1-1-7-2.9c-1.9-1.9-2.9-4.4-2.9-7c0-2.7,1-5.2,2.9-7c1.9-1.9,4.4-2.9,7-2.9c2.7,0,5.2,1,7,2.9\
+                  c2,2,3,4.7,2.9,7.6L80.2,66.6z")
+            h4 Regular Maintenance
+            .text-block
+              | Our team can provide all of the repair and maintenance services you need to ensure that your system stays up and running. Let us handle the dirty work.
+          .div-block-2
+            .div-block-3
+              .html-embed.w-embed
+                svg#1057958766.svg.u_1057958766(xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 100 100" data-hover-effect="zoomout" data-icon-name="transportation_moving_truck")
+                  path(d="M17.84,41.32h8.42a1.17,1.17,0,1,0,0-2.33H17.84a1.17,1.17,0,1,0,0,2.33Z")
+                  path(d="M26.26,46.78H15.15a1.17,1.17,0,1,0,0,2.33H26.26a1.17,1.17,0,1,0,0-2.33Z")
+                  path(d="M26.26,54.57H13.42a1.17,1.17,0,0,0,0,2.33H26.26a1.17,1.17,0,1,0,0-2.33Z")
+                  path(d="M87.75,50.5c0-.23-.28-5.6-2.69-8.62A9.28,9.28,0,0,0,80.31,39a15.63,15.63,0,0,0-4.45-.63h-5V33.76a3.17,3.17,0,0,0-3.17-3.17H36.29a7.41,7.41,0,0,0-7.4,7.4V60.26a3.17,3.17,0,0,0,3.17,3.17H35.2a7.14,7.14,0,0,0,14.09,0h21.8a7.14,7.14,0,0,0,14.1-.06,3.17,3.17,0,0,0,2.56-3.11V50.5ZM42.24,67.07a4.81,4.81,0,1,1,4.81-4.81A4.81,4.81,0,0,1,42.24,67.07Zm0-11.95a7.15,7.15,0,0,0-7,6H32.06a.83.83,0,0,1-.83-.83V38a5.08,5.08,0,0,1,5.07-5.07H67.68a.83.83,0,0,1,.83.83V61.1H49.29A7.15,7.15,0,0,0,42.24,55.12ZM78.13,67.07a4.81,4.81,0,1,1,4.81-4.81A4.81,4.81,0,0,1,78.13,67.07Zm7.29-6.81a.83.83,0,0,1-.28.62h0a7.14,7.14,0,0,0-14.05.21h-.24V40.71h5a13.3,13.3,0,0,1,3.79.53,7.16,7.16,0,0,1,3.59,2.1c1.87,2.33,2.16,6.88,2.18,7.24Z")
+            h4 Bringing Service to You
+            .text-block
+              | No matter where you are, we've got you covered. Our team comes to your location with all of the equipment required to ensure the job is done right.
+  .section
+    .main-container
+      .center-container.w-container
+        .html-embed-2.w-embed
+          svg#1929858531.svg.u_1929858531(xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 100 100" data-icon-name="li-shop_front")
+            g#1694427524
+              path#1491539074(d="M54.5,62.3H68V48.9H54.5V62.3z M56.7,51.1h9v9h-9V51.1z")
+              path#1669018922(d="M15.2,15.2v23.6c0,3.3,2.4,6.1,5.6,6.6v39.4h58.4V45.4c3.2-0.5,5.6-3.3,5.6-6.6V15.2H15.2z M28.7,17.5h9v21.3\
+              c0,2.5-2,4.5-4.5,4.5c-2.5,0-4.5-2-4.5-4.5V17.5z M39.9,17.5h9v21.3c0,2.5-2,4.5-4.5,4.5c-2.5,0-4.5-2-4.5-4.5V17.5z M51.1,17.5h9\
+              v21.3c0,2.5-2,4.5-4.5,4.5c-2.5,0-4.5-2-4.5-4.5V17.5z M62.3,17.5h9v21.3c0,2.5-2,4.5-4.5,4.5c-2.5,0-4.5-2-4.5-4.5V17.5z\
+              M17.5,38.8V17.5h9v21.3c0,2.5-2,4.5-4.5,4.5C19.5,43.3,17.5,41.3,17.5,38.8z M48.9,82.5H34.3V51.1h14.6V82.5z M51.1,82.5V48.9H32\
+              v33.7h-9V45.4c1.9-0.3,3.5-1.4,4.5-2.9c1.2,1.8,3.3,3,5.6,3c2.3,0,4.4-1.2,5.6-3c1.2,1.8,3.3,3,5.6,3c2.3,0,4.4-1.2,5.6-3\
+              c1.2,1.8,3.3,3,5.6,3c2.3,0,4.4-1.2,5.6-3c1.2,1.8,3.3,3,5.6,3c2.3,0,4.4-1.2,5.6-3c1,1.5,2.6,2.6,4.5,2.9v37.2H51.1z M78.1,43.3\
+              c-2.5,0-4.5-2-4.5-4.5V17.5h9v21.3C82.5,41.3,80.5,43.3,78.1,43.3z")
+        h2
+          | About 
+          span(data-inject="businessName") #{data.businessName}
+        .text-block
+          | We have a simple mission, to become the best provider of HVAC services in the major metropolitan area. We have been working nonstop, providing excellent customer service at competitive prices. If you would like to know more about our services and our track record in your city, give us a call today!
+          br
+          br
+          | We are an experienced team of HVAC professionals who have extensive experience working with all elements of plumbing and HVAC systems.
+  .horizontal-flex-wrapper.home
+    .mission-left
+    .mission-right
+      h4 Our Mission
+      .line
+      .text-block
+        | We want to change the landscape of HVAC service providers across the major metropolitan area. We are the business you can trust to give you the straight answer and to be upfront with our service costs and work experience.
+        br
+        | ‍
+        br
+        | With our service, we promise to provide outstanding customer service, timely repairs, and a realistic timeline so that you know exactly when to expect your project or repairs to be completed. The best part is that we do this for all extremely fair and competitive rates.
+      a.white-to-blue-button.w-button(href=`/hvac/${data.customId}/${data.slug}/about`) Read More
+  .section
+    .main-container
+      .w-container
+        .center-container
+          h2
+            span.steel-blue-span HVAC
+            |  SERVICES
+          .line.green
+          .text-block
+            | Trusted HVAC Technician services in 
+            span(data-inject="city") #{data.city}
+            | , 
+            span(data-inject="state") #{data.state}
+        .div-block-4
+          div
+            a.div-block-7.w-inline-block(href=`/hvac/${data.customId}/${data.slug}/residential`)
+            .div-block-5
+              a.service-type-link-block.w-inline-block(href=`/hvac/${data.customId}/${data.slug}/residential`)
+                h3 RESIDENTIAL
+                .black-line-link
+              .text-block
+                | An air conditioner has different parts and places where it can break down. To properly and quickly service your unit, we will inspect all the parts and determine the problem.
+          div
+            a.div-block-7.commercial.w-inline-block(href=`/hvac/${data.customId}/${data.slug}/commercial`)
+            .div-block-5
+              a.service-type-link-block.w-inline-block(href=`/hvac/${data.customId}/${data.slug}/commercial`)
+                h3 COMMERCIAL & INDUSTRIAL
+                .black-line-link
+              .text-block
+                | Looking for AC replacement, we are the people to call. Sometimes there is a problem with the AC that extends far beyond the everyday usage, and the old unit will have to go.
+  .fixed-section
+    .main-container
+      .center-container.w-container(data-w-id="7ca06207-1e44-d641-ff68-767b7587f43d" style="opacity:0")
+        h2(data-inject="businessName") #{data.businessName}
+        .text-block.white
+          | You don’t become the top HVAC company without working hard as we do! We are constantly judging ourselves based on how our customers respond to us. Call us if you would like to know more about our services. We are always available for a call and are ready and willing to help you out at a moment’s notice. Give us a call today and let’s get to work on your next service!
+        a.blue-to-clear-button.w-button(href=`/hvac/${data.customId}/${data.slug}/contact`) Contact Us
+  include _greenStatsSection
+  .section
+    .w-container
+      .div-block-8
+        h2.normal-weight
+          | Why Choose 
+          span(data-inject="businessName") #{data.businessName}
+          | ?
+        .line.green.center
+        .text-block
+          | We offer some of the best HVAC services in your area. For several years we have helped work for residences and businesses alike. Call us today, and we promise to do our best to help you with our efficient and ethically priced services!
+          br
+        .why-choose-grid
+          #w-node-414115545919-f614ff30.why-choose-card
+            .why-choose-thumbnail
+            #w-node-c29a14abebdf-f614ff30.div-block-9
+              h3 Inspection
+              div
+                | An air conditioner has different parts and places where it can break down. To properly and quickly service your unit, we will inspect all the parts and determine the problem.
+          #w-node-67b4feaab4c6-f614ff30.why-choose-card
+            .why-choose-thumbnail.repair
+            #w-node-67b4feaab4c8-f614ff30.div-block-9
+              h3 Repair
+              div
+                | Once we've quoted you on the problem and consulted you on how to best go about treating the problem, we can begin our work. This can be anything from a simple pump replacement, to a comprehensive rewiring of your unit.
+          #w-node-2d917c164c2e-f614ff30.why-choose-card
+            .why-choose-thumbnail.replace
+            #w-node-2d917c164c30-f614ff30.div-block-9
+              h3 Replacement
+              div
+                | Sometimes there is a problem with the AC that extends far beyond the everyday usage, and the old unit will have to go. We can install the new unit for you with the purchase of your new unit.
+  section.green-section.no-padding
+    include _customerReviewSection

@@ -1,0 +1,98 @@
+extends base
+
+block content
+  .about-us-header
+    .header-content
+      h1
+        | About 
+        span(data-inject="businessName") #{data.businessName}
+      a#call-fixed.primary-orange-button.w-inline-block(data-inject="phone" href=`tel:${data.phoneNumber}`)
+        .text-block Call #{data.phoneNumber}
+  header#hero.section-4
+    .flex-container.w-container
+      div(data-w-id="7e860084-00d1-8bca-8142-ab8a6bca62c0" style="opacity:0")
+        .orange-text
+          em We Love Landscaping!
+        .text-block-2
+          | For many years, we have completed landscaping projects of all sizes, for a wide range of residential and commercial clients. We love what we do, and we’re only satisfied when you are too. Gardening is our passion, and our business.
+          br
+          | ‍
+          br
+          | Give us a call or send us an email and we’ll schedule your free consultation. We’ll come to your home and business, discuss your dream garden, and give you an estimate.
+      .hero-slider-mask
+        .slider.w-slider(data-delay="2500" data-animation="cross" data-autoplay="1" data-duration="500" data-infinite="1")
+          .w-slider-mask
+            .slide-1.w-slide
+            .slide-2.w-slide
+          .arrows.w-slider-arrow-left
+            .w-icon-slider-left
+          .arrows.w-slider-arrow-right
+            .w-icon-slider-right
+          .slide-nav.w-slider-nav.w-round
+  .section-5
+    .h2-contain
+      h2
+        | Why choose 
+        span(data-inject="businessName") #{data.businessName}
+    .vertical-flex-centered-container.w-container
+      .orange-hr
+    .spacer
+    .div-block-5
+      #w-node-cda7a12a3c5e-1cca29a9.div-block-7(data-w-id="d7bc1b81-6bd4-5a65-b111-cda7a12a3c5e" style="opacity:0")
+        img.garden-tools(src="/landscaping/images/Garden_tools_seedlings-1920w.png" srcset="/landscaping/images/Garden_tools_seedlings-1920w-p-500.png 500w, /landscaping/images/Garden_tools_seedlings-1920w-p-800.png 800w, /landscaping/images/Garden_tools_seedlings-1920w-p-1080.png 1080w, /landscaping/images/Garden_tools_seedlings-1920w.png 1500w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 24vw, 22vw" alt="")
+      #w-node-12a2166e1cc4-1cca29a9(data-w-id="d2347528-dfee-08a2-df8c-12a2166e1cc4" style="opacity:0")
+        .right-align.mobile-middle
+          .about-icons._1
+          h4 Experienced Team
+          .text-block-2 For many years, we’ve been creating beautiful lawns and gardens.
+        .right-align.mobile-middle
+          .about-icons._2
+          h4
+            strong Landscape Specialists
+          .text-block-2
+            | Together with you, we create the landscape plan that considers all of your needs.
+      a#w-node-d9a810f96903-1cca29a9.primary-orange-button.w-inline-block(href="services")
+        div View All Services
+      #w-node-10f21ee5496e-1cca29a9(data-w-id="73299959-7664-e45a-40a0-10f21ee5496e" style="opacity:0")
+        .left-align.mobile-middle
+          .about-icons._3
+          h4
+            strong Licensed & Insured
+          .text-block-2
+            | We meet the highest local and regional standards, and use only certified products.
+        .left-align.mobile-middle
+          .about-icons._4
+          h4
+            strong Competitive Prices
+          .text-block-2
+            | You’ll receive the highest quality products and services, at the very best prices.
+  section.take-care._2
+    .container.w-container(data-w-id="591a2671-5078-c367-6619-b41371c32b11" style="opacity:0")
+      h2
+        strong Let us care for your lawn!
+      div
+        .text-block
+          | Call us at 
+          a.white.inline-bold(href=`tel:${data.phoneNumber}` data-inject="phone") #{data.phoneNumber}
+          |  or contact us for your free quote.
+      a#call-fixed.primary-orange-button.w-inline-block(data-inject="phone" href=`tel:${data.phoneNumber}`)
+        .text-block Call #{data.phoneNumber}
+  .specialists-section
+    .w-container
+      h2 Our Specialists
+      .specialists-wrapper
+        .specialist-card-wrapper(data-w-id="53054a04-837d-c949-4db9-b8d9297d91a4" style="opacity:0")
+          .specialist-card
+          .specialist-name
+            h3 Jason Surrey
+            .orange-text.specialists Landscape designer
+        #w-node-cb832051608a-1cca29a9.specialist-card-wrapper(data-w-id="2647187d-21cd-0939-aedd-cb832051608a" style="opacity:0")
+          .specialist-card._2
+          .specialist-name
+            h3 Steven Surrey
+            .orange-text.specialists Gardener
+        #w-node-eaea894de0cb-1cca29a9.specialist-card-wrapper(data-w-id="38610ebf-73a2-237c-e066-eaea894de0cb" style="opacity:0")
+          .specialist-card._3
+          .specialist-name
+            h3 Michelle Surrey
+            .orange-text.specialists Landscape designer

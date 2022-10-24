@@ -1,0 +1,51 @@
+mixin navDropdownLink(type, text, slugOverride)
+  if slugOverride
+    a.dropdown-link.w-dropdown-link(href=`/hvac/${data.customId}/${data.slug}/${type}/${slugOverride}`) #{text}
+  else
+    a.dropdown-link.w-dropdown-link(href=`/hvac/${data.customId}/${data.slug}/${type}/${text.toLowerCase().split(" ").join("-")}`) #{text}
+
+.navbar.w-nav(data-collapse="medium" data-animation="default" data-duration="400" role="banner")
+  .nav-container.w-container
+    a#w-node-5fbf44d58060-44d5805e.brand.w-nav-brand.w--current(href=`/hvac/${data.customId}/${data.slug}` aria-current="page")
+      div(data-inject="businessName") #{data.businessName}
+    nav#w-node-5fbf44d58063-44d5805e.nav-menu.w-nav-menu(role="navigation")
+      a.nav-link.w-nav-link(href=`/hvac/${data.customId}/${data.slug}/about`) About
+      .w-dropdown(data-hover="" data-delay="0")
+        .nav-link.dropdown.w-dropdown-toggle
+          .dropdown-icon.w-icon-dropdown-toggle
+          div Residential
+        nav.dropdown-list.w-dropdown-list
+          +navDropdownLink("residential", "AC Service and Repair")
+          +navDropdownLink("residential", "Air Conditioning Installation")
+          +navDropdownLink("residential", "Blower Door Testing")
+          +navDropdownLink("residential", "Boilers")
+          +navDropdownLink("residential", "Central Air")
+          +navDropdownLink("residential", "Dehumidification")
+          +navDropdownLink("residential", "Duct Cleaning")
+          +navDropdownLink("residential", "Furnaces")
+          +navDropdownLink("residential", "Heat Pumps")
+          +navDropdownLink("residential", "Heating Service and Repair")
+          +navDropdownLink("residential", "Home Energy Audit Solutions", "home-energy-audit-and-solutions")
+          +navDropdownLink("residential", "Humidification")
+          a.dropdown-link.all.w-dropdown-link(href=`/hvac/${data.customId}/${data.slug}/residential`) View All Residential
+      .w-dropdown(data-hover="" data-delay="0")
+        .nav-link.dropdown.w-dropdown-toggle
+          .dropdown-icon.w-icon-dropdown-toggle
+          div Commercial
+        nav.dropdown-list.w-dropdown-list
+          +navDropdownLink("commercial", "Air Distribution System Sanitation")
+          +navDropdownLink("commercial", "Energy Management and Recovery Controls")
+          +navDropdownLink("commercial", "Commercial Kitchen Ventilation")
+          +navDropdownLink("commercial", "Air Rotation Units")
+          +navDropdownLink("commercial", "Chillers and Cooling Towers")
+          +navDropdownLink("commercial", "Commercial Refrigeration")
+          +navDropdownLink("commercial", "Ground Source Heat Pumps")
+          +navDropdownLink("commercial", "Hot Water and Steam Boilers")
+          +navDropdownLink("commercial", "Indoor Air Quality Engineering")
+          +navDropdownLink("commercial", "Humidity Controls")
+          +navDropdownLink("commercial", "Ice Equipment")
+          +navDropdownLink("commercial", "Product Area Ventilation")
+          a.dropdown-link.all.w-dropdown-link(href=`/hvac/${data.customId}/${data.slug}/commercial`) View All Commercial
+      a.nav-link.w-nav-link(href=`/hvac/${data.customId}/${data.slug}/contact`) Contact
+    #w-node-5fbf44d58080-44d5805e.menu-button.w-nav-button
+      .w-icon-nav-menu

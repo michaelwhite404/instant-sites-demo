@@ -1,0 +1,66 @@
+.footer
+  .top-footer
+    .w-container
+      .footer-grid
+        #w-node-91b89f3ef2a3-9f3ef29f
+          div
+            h4.bold(data-inject="businessName")
+              strong #{data.businessName}
+          .text-block.white
+            | We provide high-quality HVAC services. Whether you need residential, commercial, or industrial services, our professional technicians will take care of you.
+        #w-node-91b89f3ef2aa-9f3ef29f
+          h4
+            strong CONTACT US
+          div
+            a.footer-link.w-inline-block(data-inject="phone" href=`tel:${data.phoneNumber}`)
+              .text-block.white #{data.phoneNumber}
+            ._20px-spacer
+            a.footer-link.w-inline-block(data-inject="email" href=`mailto:${data.email}`)
+              .text-block.white #{data.email}
+            ._20px-spacer
+            a.text-block.white(href=`https://maps.google.com/?q=${data.fullAddress}` target="_blank")
+              if data.suite
+                span(data-inject="address") #{data.streetAddress} #{data.suite}
+              else
+                span(data-inject="address") #{data.streetAddress}
+              | ,
+              br
+              span(data-inject="city") #{data.city}
+              | , 
+              span(data-inject="state") #{data.state}
+              span(data-inject="zip")= ` ${data.zip}`
+            ._20px-spacer
+            .text-block.white LIC#15435-CF-TP
+        #w-node-91b89f3ef2c7-9f3ef29f
+          h4
+            strong BUSINESS HOURS
+          .text-block.white
+            | Monday - Friday: 9:00 am - 5:00 pm
+            br
+            br
+            | Saturday: 8:00 am - 6:30 pm
+            br
+            br
+            | Sunday: 10:00 am - 4:00 pm
+            br
+            br
+        #w-node-91b89f3ef2d5-9f3ef29f.white-footer-line
+        #w-node-91b89f3ef2d6-9f3ef29f
+          .footer-social-div
+            a.icon-wrapper.w-inline-block(href="https://www.facebook.com/" target="_blank")
+              img.social-icons(src="/hvac/images/White-Facebook.png" alt="")
+            a.icon-wrapper.w-inline-block(href="https://www.instagram.com/" target="_blank")
+              img.social-icons(src="/hvac/images/White-Instagram.png" alt="")
+            a.icon-wrapper.w-inline-block(href="https://twitter.com/" target="_blank")
+              img.social-icons(src="/hvac/images/White-Twitter.png" alt="")
+            a.icon-wrapper.w-inline-block(href="https://www.yelp.com/" target="_blank")
+              img.social-icons(src="/hvac/images/White-Yelp.png" alt="")
+        #w-node-91b89f3ef2e0-9f3ef29f.white-footer-line
+  .bottom-footer
+    .bottom-footer-grid.w-container
+      img#w-node-91b89f3ef2e3-9f3ef29f(src="/hvac/images/goodman-ac-1.svg" width="151" alt="")
+      img#w-node-91b89f3ef2e4-9f3ef29f(src="/hvac/images/rudd-logo.png" width="118" alt="")
+      img#w-node-91b89f3ef2e5-9f3ef29f(src="/hvac/images/Trane_logo.png" width="150" srcset="/hvac/images/Trane_logo-p-500.png 500w, /hvac//hvac/images/Trane_logo-p-800.png 800w, /hvac/images/Trane_logo-p-1080.png 1080w, /hvac/images/Trane_logo.png 1200w" sizes="(max-width: 479px) 43vw, (max-width: 767px) 29vw, (max-width: 991px) 108px, 143.3249969482422px" alt="")
+      img#w-node-91b89f3ef2e6-9f3ef29f(src="/hvac/images/rheem.png" width="63" alt="")
+      img#w-node-91b89f3ef2e7-9f3ef29f.footer-images(src="/hvac/images/carrier-logo.png" alt="")
+      img#w-node-91b89f3ef2e8-9f3ef29f(src="/hvac/images/logo-Lennox-specialist.png" width="134" alt="")

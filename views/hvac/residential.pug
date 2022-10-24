@@ -1,0 +1,71 @@
+extends base
+
+mixin majorCard(name, image, text)
+  - var slug = `${name.toLowerCase().split(" ").join("-")}`
+  - var link = `${beginningLink}/residential/${slug}`
+  .major-grid-card
+    a.w-inline-block(href=`${link}`)
+      img.major-grid-thumbnail(src=`/hvac/images/${image}.png` srcset=`/hvac/images/${image}-p-500.png 500w, /hvac/images/${image}-p-800.png 800w, /hvac/images/${image}-p-1080.png 1080w, /hvac/images/${image}-p-1600.png 1600w, /hvac/images/${image}.png 1920w` sizes="(max-width: 479px) 90vw, (max-width: 767px) 46vw, (max-width: 991px) 226.66250610351562px, 297.32501220703125px" alt="")
+    .major-grid-card-bottom
+      h4
+        strong #{name}
+      .text-block
+        | #{text}
+      a.white-to-blue-button.grid-absolute.w-button(href=`${link}`) Read More
+
+block content
+  .residential-header
+    .main-container
+      .hero-container.w-container
+        .center-container
+          h1.hero-heading-2
+            span(data-inject="city") #{data.city}
+            |  Residential HVAC Services
+          .line.white
+          h2(data-inject="businessName") #{data.businessName}
+  .section
+    .main-container
+      .center-container.w-container
+        h2.normal-weight
+          | We Provide 
+          span.steel-blue-span Professional HVAC
+          |  Services
+        ._500-width
+          .text-block
+            | We are always available for a call and are ready and willing to help you out at a moment’s notice.
+        .line.green.top-margin
+        .grid-wrapper
+          ._3by4-grid.main
+            +majorCard("AC Service and Repair", "heat-pump-replacing-LG5ANK2-2880w", "Are you running into problems with your air conditioner? Does it ever feel like it is simply not becoming cold enough or your noticed your electrical bill has been consistently.")
+            +majorCard("Air Conditioning Installation", "AIRCONDITIONINGINSTALLATION", "If you are in the market for a new air conditioner, then you should call the professionals who know everything about your HVAC units.")
+            +majorCard("Blower Door Testing", "BlowerDoorRepair", "The blower door is an integral part of your HVAC system. It is responsible for regulating the air flow into the system and making sure that the temperatures.")
+            +majorCard("Boilers", "BOILERS", "Having a water boiler that functions is a necessary part of life for many Americans, the concept that you won't be able to have hot running water is something.")
+            +majorCard("Central Air", "centralair", "Have you recently upgraded to a central air system and don't know what to do? This is extremely common for people who have recently acquired or upgraded.")
+            +majorCard("Dehumidification", "dehumidifierrepair", "In many climates across the country, there is a problem with excess humidity. Proximity to a body of water can practically guarantee there will be an excess.")
+            +majorCard("Duct Cleaning", "DuctCleaning", "Do you have dirty ducts or suspect you do? When you look at the duct above you, do you see elements of dust and debris gently moving in the wind?")
+            +majorCard("Furnaces", "FurnaceRepair", "Furnace's may be some of the oldest items that are keeping the house functional, but they have been modernized quite a bit in the last few years.")
+            +majorCard("Heat Pumps", "heatpumprepair", "Are you having problems with your heat pumps? It's not that uncommon of a problem to experience when you are trying to keep care of your home.")
+            +majorCard("Heating Service and Repair", "heatingsystemrepair","Many people's homes revolve around internal heating. The days when they are the coldest are some of the most difficult to endure.")
+            +majorCard("Home Energy Audit Solutions", "homeenrgy", "If you have noticed that your energy bill has been skyrocketing these past few weeks, then you should probably call for an audit of your home energy usage.")
+            +majorCard("Humidification", "HUMIDIFICATION2", "Having too dry a climate can be very bad for people. Between skin conditions and a higher risk for dry throat-related illnesses, it is an issue for many Americans.")
+  .fixed-section.residential
+    .main-container
+      .center-container.w-container(data-w-id="204be34b-64ec-11b0-3617-c909a98861c0" style="opacity:0")
+        h2.normal-weight The Highest-Rated Customer Service on the Market
+        ._750-width
+          .text-block.white
+            | Our recurring customers and current customer reviews are evidence of our commitment to quality! If you would like to know more about our services, our company or the current discounts we are providing, please give us a call today!
+  ._50-40-section
+    .main-container
+      .horizontal-flex-wrapper.res.w-container
+        .residential-bottom-left
+          h4
+            | With 
+            span(data-inject="businessName") #{data.businessName}
+            | , you are working with the best HVAC company in 
+            span(data-inject="city") #{data.city}
+            | .
+          .text-block We offer a wide range of services to meet every type of need.
+          a.white-to-blue-button.more-top-margin.w-button(href=`${beginningLink}/contact`) Contact Us
+        .residential-bottom-right
+

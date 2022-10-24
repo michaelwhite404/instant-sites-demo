@@ -1,0 +1,41 @@
+block variables
+include _head
+
+body
+  include _navbar
+  div(class=`main-services-header ${industryType}`)
+    .center-container.w-container
+      h1.hero-heading-3 #{title}
+      .line.blue.longer
+  ._50-40-section
+    .main-container
+      .center-container.w-container
+        h3.main-services-h3
+          strong #{mainServicesH3}
+        .text-block
+          | #{mainText1}
+          if mainText2
+            br 
+            br
+            | #{mainText2}
+  include _blueChecksSection
+  .our-services-section
+    if leftClass
+      div(class=`our-services-left ${leftClass}`)
+    else
+      .our-services-left
+    .our-services-right
+      h3.main-services-h3.our-services
+        strong Our Services
+      h4(class="main-services-h4") #{ourService1}
+      div(class="text-block") #{ourText1}
+      h4(class="main-services-h4") #{ourService2}
+      div(class="text-block") #{ourText2}
+      h4(class="main-services-h4") #{ourService3}
+      div(class="text-block") #{ourText3}
+  include _greenStatsSection
+  include _knowMoreSection
+  include _customerReviewSection
+  include _footer
+  include _bottomScript
+

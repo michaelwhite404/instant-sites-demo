@@ -1,0 +1,88 @@
+extends base
+
+block content
+  .about-header
+    .main-container
+      .hero-container.w-container
+        .center-container
+          h1.hero-heading-1
+            | About 
+            span(data-inject="businessName") #{data.businessName}
+          .line.white
+          ._590-width
+            .text-block.white
+              | We provide a wide range of professional services to meet your needs. We promise to provide every service with a smile, and to your highest level of satisfaction.
+  .green-section
+    .main-container
+      .horizontal-flex-wrapper.about.w-container
+        .big-changes-left
+        .big-changes-right
+          h3 HVAC Company Making Big Changes
+          .text-block
+            | We started our company with an idea that we should be different from every other company out there. We want to provide excellent services at honest prices and we believe we’ve delivered on that.
+  .section
+    .main-container
+      ._8to4-grid.about.w-container
+        #w-node-0965ea1b2319-933a3dd2
+          h4 Who We Are
+          .text-block
+            | We have a simple mission, to become the best provider of HVAC services in the major metropolitan area. We have been working nonstop, providing excellent customer service at competitive prices. If you would like to know more about our services and our track record in your city, give us a call today!
+          h4 Always There For You
+          .text-block
+            | We are an experienced team of HVAC professionals who have extensive experience working with all elements of HVAC systems.
+            br
+            br
+            | We want to change the landscape of HVAC service providers across the major metropolitan area. We are the business you can trust to give you the straight answer and to be upfront with our service costs and work experience.
+        #w-node-375aa808e538-933a3dd2.who-we-are-right
+          .div-block-6
+            a.phone-number-text-link(data-inject="phone" href=`tel:${data.phoneNumber}`) #{data.phoneNumber}
+            div We can provide expert 24 hour emergency service. Contact when you need it!
+          .div-block-6.flex-h
+            .blue-icon.margin-right.w-embed
+              svg#1856115816.svg.u_1856115816(xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 100 100" data-icon-name="li-envelope")
+                path(d="M17.8,28.2v43.6h64.4V28.2H17.8z M77.7,30.3L50,48.8L22.3,30.3H77.7z M19.9,69.7V31.2L50,51.2l30.1-20.1v38.5H19.9z")
+            a.text-block(data-inject="email" href=`mailto:${data.email}`) #{data.email}
+          .div-block-6.flex-h
+            .blue-icon.margin-right.w-embed
+              svg#1719553162.svg.u_1719553162(xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 70 70" data-icon-name="wp-location_pin_thin")
+                g
+                  path(d="M35,10c-9.4,0-17,7.6-17,17c0,4.1,1.5,8,4.1,11.1l0.1,0.1c4.6,5.3,7.9,10.8,9.9,16.4l1,3.7l0,0.1c0.3,1.1,1,1.6,1.9,1.6\
+                  s1.6-0.5,1.9-1.6l1-3.8c1.9-5.6,5.3-11.2,9.9-16.4l0.1-0.1C50.5,35,52,31.1,52,27C52,17.6,44.4,10,35,10z M46.4,36.8L46.4,36.8\
+                  C41.5,42.3,38.1,48.1,36,54l0,0.1c0,0-1,3.7-1,3.7c0,0-0.1-0.2-0.1-0.2L34,54l0-0.1c-2-5.8-5.5-11.5-10.2-17l-0.1-0.1\
+                  C21.3,34.1,20,30.6,20,27c0-8.3,6.7-15,15-15s15,6.7,15,15C50,30.6,48.7,34.1,46.4,36.8z")
+                  path(d="M35,34c-3.9,0-7-3.1-7-7s3.1-7,7-7c3.9,0,7,3.1,7,7S38.9,34,35,34z M35,22c-2.8,0-5,2.2-5,5s2.2,5,5,5c2.8,0,5-2.2,5-5\
+                  S37.8,22,35,22z")
+            div
+              a.text-block(href=`https://maps.google.com/?q=${data.fullAddress}` target="_blank")
+                span(data-inject="address") #{data.streetAddress}
+                br
+                span(data-inject="city") #{data.city}
+                | , 
+                span(data-inject="state") #{data.state}
+                span(data-inject="zip")= ` ${data.zip}`
+  .fixed-section.no-overlay
+    .main-container
+      .w-container
+        .center-container.with-padding.overlay
+          .html-embed-2.w-embed
+            svg#1175569395.svg.u_1175569395(xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 100 100" data-icon-name="li_award" data-hover-effect="zoomout")
+              g#1562947331
+                path#1484479009(d="M50,23.5c-11,0-19.9,8.9-19.9,19.9S39,63.3,50,63.3s19.9-8.9,19.9-19.9S61,23.5,50,23.5z M50,60.9\
+                c-9.6,0-17.5-7.8-17.5-17.5C32.5,33.8,40.4,26,50,26s17.5,7.8,17.5,17.5C67.5,53.1,59.6,60.9,50,60.9z")
+                path#1349804024(d="M88.3,73.7L75.6,61l2.2-1.3V51l4.4-7.6l-4.4-7.6v-8.7l-7.6-4.4l-4.4-7.6h-8.7l-7.6-4.4L42,15.2h-8.7l-4.4,7.6l-7.6,4.4v8.7\
+                L17,43.4l4.4,7.6v8.7l2.7,1.6L11.7,73.7c-0.4,0.4-0.5,0.9-0.3,1.4s0.6,0.8,1.2,0.8h11.2v11.2c0,0.5,0.3,1,0.8,1.2\
+                c0.2,0.1,0.3,0.1,0.5,0.1c0.3,0,0.6-0.1,0.9-0.4l16.2-16.2l7.5,4.3l7.6-4.4h0.6L74.2,88c0.2,0.2,0.6,0.4,0.9,0.4\
+                c0.2,0,0.3,0,0.5-0.1c0.5-0.2,0.8-0.6,0.8-1.2V75.8h11.2c0.5,0,1-0.3,1.2-0.8C88.7,74.6,88.6,74.1,88.3,73.7z M25.1,73.4h-9.5\
+                l10.7-10.7l2.6,1.5l4.4,7.6h5.4L26.3,84.1v-9.5C26.3,73.9,25.8,73.4,25.1,73.4z M56.5,69.2l-6.9,4l-6.9-4h-8l-4-6.9l-6.9-4v-8\
+                l-4-6.9l4-6.9v-8l6.9-4l4-6.9h8l6.9-4l6.9,4h8l4,6.9l6.9,4v8l4,6.9l-4,6.9v8l-6.9,4l-4,6.9H56.5z M74.9,73.4\
+                c-0.7,0-1.2,0.6-1.2,1.2v9.5L61.3,71.7h4.6l4.4-7.6l3.1-1.8l11,11L74.9,73.4L74.9,73.4z")
+          .line.white.top-margin
+          h4
+            strong LICENSED AND INSURED
+          .text-block.white
+            | For a free quote and our current specials please contact us. With years of experience, we will be happy to assist. 
+            br
+            | Call us today.
+  include _greenStatsSection
+  include _customerReviewSection
+    

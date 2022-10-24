@@ -1,0 +1,58 @@
+extends base
+
+mixin majorCard(name, image, text)
+  - var slug = `${name.toLowerCase().split(" ").join("-")}`
+  - var link = `${beginningLink}/commercial/${slug}`
+  .major-grid-card
+    a.w-inline-block(href=`${link}`)
+      img.major-grid-thumbnail(src=`/hvac/images/${image}.png` srcset=`/hvac/images/${image}-p-500.png 500w, /hvac/images/${image}-p-800.png 800w, /hvac/images/${image}-p-1080.png 1080w, /hvac/images/${image}-p-1600.png 1600w, /hvac/images/${image}.png 1920w` sizes="(max-width: 479px) 90vw, (max-width: 767px) 46vw, (max-width: 991px) 226.66250610351562px, 297.32501220703125px" alt="")
+    .major-grid-card-bottom
+      h4
+        strong #{name}
+      .text-block
+        | #{text}
+      a.white-to-blue-button.grid-absolute.w-button(href=`${link}`) Read More
+
+block content
+  .commercial-header
+    .main-container
+      .hero-container.w-container
+        .center-container
+          h1.hero-heading-2
+            span(data-inject="city") #{data.city}
+            |  Commercial & Industrial HVAC Services
+          .line.white
+          h2(data-inject="businessName") #{data.businessName}
+  .section
+    .main-container
+      .center-container.w-container
+        h2.normal-weight
+          | We Provide 
+          span.steel-blue-span Professional HVAC
+          |  Services
+        ._500-width
+          .text-block
+            | We are always available for a call and are ready and willing to help you out at a moment’s notice.
+        .line.green.top-margin
+        .grid-wrapper
+          ._3by4-grid.main
+            +majorCard("Air Distribution System Sanitation", "AirDistributionSystem-2880w", "Air systems affect the overall air quality and costs of your business. If you and your customers are breathing in the unclean air than you are risking long-term health.")
+            +majorCard("Energy Management and Recovery Controls", "ENERGYMANAGEMENTANDRECOVERYCONTROLS-2880w", "Businesses like yours have multiple costs that are necessary for operation, but if you're not careful, you can be bled dry by energy expenses.")
+            +majorCard("Commercial Kitchen Ventilation", "commercialkitcheninstallation-2880w", "Proper ventilation in the kitchen is an absolute must. It's great for keeping flavor aromas separate, it's great for fire and smoke control in a building.")
+            +majorCard("Air Rotation Units", "airrotationunitinstallation-2880w", "Most people will simply call them fans, but the fact is that multiple air rotation units on the market certainly stretch the definition. Anything from fans and lovers.")
+            +majorCard("Chillers and Cooling Towers", "CHILLERSANDCOOLINGTOWERS-2880w", "Chillers and chilling towers are invaluable in the storing and selling of multiple frozen products over the course of weeks to months.")
+            +majorCard("Commercial Refrigeration", "refrigeratorrepair-2880w", "Are you working in a business that would need commercial refrigeration? Commercial refrigeration services are incredibly important for anything.")
+            +majorCard("Ground Source Heat Pumps", "heatpumpinstallation-2880w", "Heat pumps are incredibly important for ensuring you manage your temperature, as well as you, need to when it's best for you. However, having a ground source of heat.")
+            +majorCard("Hot Water and Steam Boilers", "BoilerInstallation-2880w", "Temperature control is a vital and necessary step for many businesses. Having boilers in your building ensures there will be hot water present.")
+            +majorCard("Indoor Air Quality Engineering", "airqualityrepair-2880w", "Are you noticing a difference in your air quality? Chances are if you can notice it, so will your regular customers. If you want to make sure to look after the best interests.")
+            +majorCard("Humidity Controls", "humiditycontrolrepair-2880w", "Humidity controls are a valuable asset for multiple businesses. Humidity controlling is viable for businesses ranging from clothing stores to wine stores and restaurants.")
+            +majorCard("Ice Equipment", "ice-2880w", "Ice machines and ice equipment are becoming more popular every day. But they are already immensely valuable to anything from grocery stores to hospitals.")
+            +majorCard("Product Area Ventilation", "PRODUCTAREAVENTILATION-2880w", "Product area ventilation is an important way to guarantee freshness and quality control over the things that operate and run your business at full force.")
+  .fixed-section.commercial
+    .main-container
+      .center-container.w-container(data-w-id="02456d0c-aa2e-d8d0-c340-6a268ff6dc56" style="opacity:0")
+        h2.normal-weight Would You Like to Know More?
+        ._750-width
+          .text-block.white
+            | We have a simple mission, to become the best provider of HVAC services in the major metropolitan area. We have been working nonstop, providing excellent customer service at competitive prices. If you would like to know more about our services and our track record in your city, give us a call today!
+        a.white-to-blue-button.more-top-margin.w-button(href=`${beginningLink}/contact`) Contact Us

@@ -1,0 +1,58 @@
+extends base
+
+block content
+  .contact-header
+    .container-2.w-container
+      #w-node-179624b6cb62-76b19860.content-header-card
+        .green-phone
+        h4.heading-4-custom Call Us
+        .text-block-2 Tell us your needs and we’ll send you a free estimate.
+        a.white-link-block.w-inline-block(data-inject="phone" href=`tel:${data.phoneNumber}`)
+          div #{data.phoneNumber}
+      #w-node-18db9edf9e47-76b19860.content-header-card
+        .green-email
+        h4.heading-4-custom Email Us
+        .text-block-2 For general inquiries and questions, contact us via email.
+        a.white-link-block.w-inline-block(data-inject="email" href=`mailto:${data.email}`)
+          div #{data.email}
+      #w-node-ae5952cf6648-76b19860.content-header-card
+        .green-pin
+        h4.heading-4-custom Visit Us
+        .text-block-2
+          div
+            span(data-inject="address") #{data.streetAddress}
+            if data.suite
+              | 
+              span(data-inject="suite")= ` ${data.suite}`
+          div
+            span(data-inject="city") #{data.city}
+              | , 
+              span(data-inject="state") #{data.state}
+              | 
+              span(data-inject="zip") #{data.zip}
+        a.white-link-block.w-inline-block(href=`https://maps.google.com/?q=${data.fullAddress}` target='_blank')
+          div Find Us
+  .section-6
+    .vertical-flex-centered-container.w-container
+      .inner-container
+        h2 Get a Free Quote
+        .text-block-2
+          | Get the lawn or garden of your dreams. It’s easier than you think! Contact us today and we’ll beautify your home or commercial property. Call us at 
+          a.black-333.inline-bold(href=`tel:${data.phoneNumber}` data-inject="phone") #{data.phoneNumber}
+          |  or send us a message using the form below and we’ll get back to you as soon as we can.
+        .contact-form-block.w-form
+          form#email-form.contact-form(name="email-form" data-name="Email Form")
+            #w-node-7c871d2732e2-76b19860
+              label.field-label(for="name") Name
+              input#Name.text-field.w-input(type="text" maxlength="256" name="name" data-name="Name")
+            #w-node-96c4ee7f396b-76b19860
+              label.field-label(for="Phone") Phone
+              input#Phone.text-field.w-input(type="tel" maxlength="256" name="Phone" data-name="Phone")
+            #w-node-086e53b0473c-76b19860
+              label.field-label(for="Email") Email
+              input#Email.text-field.w-input(type="email" maxlength="256" name="Email" data-name="Email")
+            #w-node-8c43f4a825b2-76b19860
+              label.field-label(for="Message") Message
+              textarea#Message.text-field.textarea.w-input(name="Message" maxlength="5000" data-name="Message")
+            #w-node-4deaa2533375-76b19860
+              input.primary-orange-button.wider.w-button(type="submit" value="Send" data-wait="Please wait...")

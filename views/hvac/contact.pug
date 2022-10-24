@@ -1,0 +1,67 @@
+extends base
+
+block content
+  .contact-header
+    .main-container
+      .hero-container.w-container
+        .center-container
+          h1.hero-heading-1
+            | Contact 
+            span(data-inject="businessName") #{data.businessName}
+          .line.white
+          ._590-width
+            .text-block.white For more information, fill in your contact details and we’ll get back to you.
+  .section
+    .main-container
+      .w-container
+        ._7to5-grid.contact-grid
+          #w-node-d1360b584e2d-26b92b40
+            .w-form
+              form#contact-form.contact-form(name="email-form" data-name="Email Form")
+                #w-node-85f188771336-26b92b40
+                  label.contact-field-label(for="Name") Name
+                  input#Name.contact-text-field.w-input(type="text" maxlength="256" name="Name" data-name="Name" required="")
+                #w-node-bd8c0b4c85aa-26b92b40
+                  label(for="Phone") Phone
+                  input#Phone.contact-text-field.w-input(type="text" maxlength="256" name="Phone" data-name="Phone" required="")
+                #w-node-637c74fad2c9-26b92b40
+                  label.contact-field-label(for="Email") Email
+                  input#Email.contact-text-field.w-input(type="text" maxlength="256" name="Email" data-name="Email" required="")
+                #w-node-5e03dcafb75e-26b92b40
+                  label.contact-field-label(for="Message") Message
+                  textarea#Message.contact-text-field.w-input(data-name="Message" maxlength="5000" name="Message")
+                input#w-node-6c500d097420-26b92b40.white-to-blue-button.w-button(type="submit" value="Send" data-wait="Please wait...")
+          #w-node-5103fa7ac762-26b92b40
+            h4.no-top-margin
+              strong Get In Touch
+            .line.green.contact
+            .contact-flex
+              div
+                a.text-block.margin-bottom(data-inject="phone" href=`tel:${data.phoneNumber}`) #{data.phoneNumber}
+                a.text-block(style="display:table" href=`https://maps.google.com/?q=${data.fullAddress}`)
+                  span(data-inject="address") #{data.streetAddress}
+                  | ,
+                  br
+                  span(data-inject="city") #{data.city}
+                  | , 
+                  span(data-inject="state") #{data.state}
+                  span(data-inject="zip")= ` ${data.zip}`
+                a.text-block.margin-top(data-inject="email" href=`mailto:${data.email}`) #{data.email}
+              .hours-wrapper
+                #w-node-d30a65c9354b-26b92b40.contact-field-label
+                  strong Hours
+                .text-block Mon - Fri
+                .text-block 9:00 am - 5:00 pm
+                .text-block Saturday
+                .text-block 8:00 am - 6:30 pm
+                .text-block Sunday
+                .text-block 10:00 am - 4:00 pm
+            .contact-socials
+              a.contact-social-link.w-inline-block(href="#")
+                img.contact-social-icon(src="/hvac/images/White-Facebook.png" alt="")
+              a.contact-social-link.w-inline-block(href="#")
+                img.contact-social-icon(src="/hvac/images/White-Twitter.png" alt="")
+              a.contact-social-link.w-inline-block(href="#")
+                img.contact-social-icon(src="/hvac/images/White-Instagram.png" alt="")
+              a.contact-social-link.w-inline-block(href="#")
+                img.contact-social-icon(src="/hvac/images/White-Yelp.png" alt="")

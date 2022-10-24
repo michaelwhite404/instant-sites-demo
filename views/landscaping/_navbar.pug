@@ -1,0 +1,25 @@
+mixin navLink(text, page, dataId)
+  - var link = `/landscaping/${data.customId}/${data.slug}`
+  if page != false
+    - link = `${link}/${page}`
+  a.nav-link.w-inline-block(data-w-id=`${dataId}` href=`${link}`)
+    div #{text}
+    .nav-underline
+    .nav-underline-current
+
+
+.navbar.w-nav(data-collapse="medium" data-animation="default" data-duration="400" role="banner")
+  .nav-container.w-container
+    #w-node-30a02f5d1581-2f5d1567.menu-button.w-nav-button
+      .w-icon-nav-menu
+    a#w-node-30a02f5d1569-2f5d1567.brand.w-nav-brand.w--current(href=`/landscaping/${data.customId}/${data.slug}`)
+      .logo-name(data-inject="businessName") #{data.businessName}
+    nav#w-node-30a02f5d156c-2f5d1567.nav-menu.w-nav-menu(role="navigation")
+      +navLink('Home', '', "7b8daaff-0306-a487-b11b-30a02f5d156d")  
+      +navLink('About Us', 'about-us', "7b8daaff-0306-a487-b11b-30a02f5d1571") 
+      +navLink('Services', 'services', "7b8daaff-0306-a487-b11b-30a02f5d1575") 
+      +navLink('Projects', 'projects', "7b8daaff-0306-a487-b11b-30a02f5d1579") 
+      +navLink('Contact', 'contact', "7b8daaff-0306-a487-b11b-30a02f5d157d")
+    #w-node-30a02f5d1583-2f5d1567.right-nav-div
+      a.secondary-orange-button.w-inline-block(href=`/landscaping/${data.customId}/${data.slug}/contact`)
+        div Get a Quote
