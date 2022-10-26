@@ -1,9 +1,9 @@
 import { TextField } from "@mui/material";
 
 export default function DataField(props: DataFieldProps) {
-  const gridColumn = `span ${props.span || 1}`;
+  const gridColumn = props.span ? `span ${props.span}` : undefined;
   return (
-    <div style={{ gridColumn }}>
+    <div id={props.id} className="date-field" style={{ gridColumn }}>
       <TextField
         value={props.value}
         fullWidth
@@ -31,16 +31,19 @@ export default function DataField(props: DataFieldProps) {
         }}
         onChange={props.onChange}
         name={props.name}
+        disabled={props.disabled}
       />
     </div>
   );
 }
 
 interface DataFieldProps {
+  disabled?: boolean;
   span?: number;
   required?: boolean;
   label: string;
   value: string;
   onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> | undefined;
   name?: string;
+  id?: string;
 }

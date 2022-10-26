@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
+const autoIncrement = require("mongoose-auto-increment");
 
 const siteSchema = new mongoose.Schema(
   {
@@ -10,6 +12,9 @@ const siteSchema = new mongoose.Schema(
       type: String,
     },
     lastName: {
+      type: String,
+    },
+    fullName: {
       type: String,
     },
     phoneNumber: {
@@ -51,6 +56,7 @@ const siteSchema = new mongoose.Schema(
     industry: {
       type: String,
       required: true,
+      enum: ["Landscaping", "Martial Arts", "HVAC"],
     },
     fullAddress: {
       type: String,
@@ -58,6 +64,7 @@ const siteSchema = new mongoose.Schema(
     customId: {
       type: Number,
       unique: true,
+      immutable: true,
     },
     status: {
       type: String,
@@ -67,7 +74,7 @@ const siteSchema = new mongoose.Schema(
     },
     createdAt: {
       type: Date,
-      default: new Date(),
+      immutable: true,
     },
   },
   {
@@ -75,6 +82,37 @@ const siteSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   }
 );
+
+siteSchema.pre("save", function () {
+  let suite, afterStreetComma, afterSuiteComma;
+
+  this.slug = slugify(this.businessName, { lower: true });
+
+  if (this.suite) {
+    suite = this.suite;
+    afterStreetComma = "";
+    afterSuiteComma = ", ";
+  } else {
+    suite = "";
+    afterStreetComma = ",";
+    afterSuiteComma = "";
+  }
+
+  this.fullAddress = `${this.streetAddress}${afterStreetComma} ${suite}${afterSuiteComma}${this.city}, ${this.state} ${this.zip}`;
+
+  this.fullName = `${this.firstName} ${this.lastName}`;
+
+  if (this.isNew) this.createdAt = new Date().toISOString();
+  next();
+});
+
+autoIncrement.initialize(mongoose.connection);
+siteSchema.plugin(autoIncrement.plugin, {
+  model: "Site",
+  field: "customId",
+  startAt: 1,
+  incrementBy: 1,
+});
 
 const Site = mongoose.model("Site", siteSchema);
 

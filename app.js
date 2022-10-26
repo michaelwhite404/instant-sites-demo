@@ -4,6 +4,7 @@ const morgan = require("morgan");
 
 const hvacRouter = require("./routes/hvacRoutes");
 const landscapingRouter = require("./routes/landscapingRoutes");
+const apiRouter = require("./routes/apiRoutes");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(function (req, res, next) {
   }
 });
 
+app.use("/api/sites", apiRouter);
 app.use("/hvac", hvacRouter);
 app.use("/landscaping", landscapingRouter);
 
