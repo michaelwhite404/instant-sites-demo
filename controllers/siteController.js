@@ -3,7 +3,7 @@ const APIFeatures = require("../utils/apiFeatures");
 const catchAsync = require("../utils/catchAsync");
 
 exports.getAllSites = catchAsync(async (req, res, next) => {
-  const features = new APIFeatures(Site.find(), req.query).filter().sort().limitWhats().paginate();
+  const features = new APIFeatures(Site.find(), req.query).filter().sort().limitFields().paginate();
 
   const sites = await features.query;
 
