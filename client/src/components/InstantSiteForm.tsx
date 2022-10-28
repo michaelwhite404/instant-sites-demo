@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Site } from "../App";
 import DataField from "./DateField";
 import IndustryButton from "./IndustryButton";
 
@@ -18,7 +19,12 @@ const industries = [
   },
 ];
 
-export default function InstantSiteForm() {
+interface Props {
+  setPageState: React.Dispatch<React.SetStateAction<string>>;
+  setNewSite: React.Dispatch<React.SetStateAction<Site | undefined>>;
+}
+
+export default function InstantSiteForm({ setPageState, setNewSite }: Props) {
   const [data, setData] = useState({
     businessName: "",
     firstName: "",
@@ -34,7 +40,6 @@ export default function InstantSiteForm() {
     country: "",
     industry: "",
   });
-
   const handleTextChange: React.ChangeEventHandler<HTMLInputElement> = (e) =>
     setData({ ...data, [e.target.name]: e.target.value });
 
@@ -43,19 +48,16 @@ export default function InstantSiteForm() {
     return data[key as keyof typeof data].length > 0;
   });
 
-  const createSite = (body: typeof data) => {
+  const createSite: React.FormEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
     if (!submittable) return;
-    const res = axios.post("/api/sites", body);
+    const res = await axios.post("/api/sites", data);
+    setNewSite(res.data.data.newSite);
+    setPageState("created");
   };
+
   return (
-    <form>
-      <div style={{ paddingTop: 60 }}>
-        <h1>Instant Site Creator Demo</h1>
-        <p>
-          Enter the data and industry template you wish to create and we will build the fully custom
-          website.
-        </p>
-      </div>
+    <form onSubmit={createSite}>
       <div style={{ padding: "40px 0" }}>
         <p className="instant-step-text">STEP 1: Enter the Business Owner's Contact Information</p>
         <div className="text-fields-grid">
