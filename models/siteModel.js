@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const slugify = require("slugify");
-const autoIncrement = require("mongoose-auto-increment");
+const Increment = require("./incrementModel");
 
 const siteSchema = new mongoose.Schema(
   {
@@ -83,7 +83,7 @@ const siteSchema = new mongoose.Schema(
   }
 );
 
-siteSchema.pre("save", function () {
+siteSchema.pre("save", async function (next) {
   let suite, afterStreetComma, afterSuiteComma;
 
   this.slug = slugify(this.businessName, { lower: true });
@@ -102,16 +102,12 @@ siteSchema.pre("save", function () {
 
   this.fullName = `${this.firstName} ${this.lastName}`;
 
-  if (this.isNew) this.createdAt = new Date().toISOString();
+  if (this.isNew) {
+    this.createdAt = new Date().toISOString();
+    const id = await Increment.getNextId("Site", 1);
+    this.customId = id; // Incremented
+  }
   next();
-});
-
-autoIncrement.initialize(mongoose.connection);
-siteSchema.plugin(autoIncrement.plugin, {
-  model: "Site",
-  field: "customId",
-  startAt: 1,
-  incrementBy: 1,
 });
 
 const Site = mongoose.model("Site", siteSchema);
